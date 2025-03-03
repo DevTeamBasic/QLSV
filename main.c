@@ -102,9 +102,12 @@ void function_4(sinhvien sv, int size){
         printf("Nhap nam sinh can tim: "); scanf("%d", &year); 
         system("cls");
         int count = 0;
+        printf("%-4s|%-20s|%-10s|%-10s|%-5s|%-5s|%-5s\n","STT","Name","Birth","ID","Score_1","Score_2","AVG");
+        printf("=====================================================================\n");
         for(i = 0; i <= size-1; i++){
             if(sv[i].YearOfBirth == year){
-                showInformation(sv[i]);
+                printf("%-4d|%-20s|%-10d|%-10s|%-7.2f|%-7.2f|%-7.2f\n",i+1,sv[i].name,sv[i].YearOfBirth,sv[i].mssv,sv[i].dlt,sv[i].dth, sv[i].dtb);
+                printf("---------------------------------------------------------------------\n");
                 count++;
             }
         }
@@ -114,10 +117,11 @@ void function_4(sinhvien sv, int size){
         char MSSV[200]; fflush(stdin);
         printf("Nhap ma so sinh vien can tim: "); fgets(MSSV, sizeof(MSSV), stdin); fflush(stdin);
         MSSV[strlen(MSSV)-1] = '\0';
-        system("cls"); int t = 0;
+        system("cls"); int t = 0; int index;
         for(i = 0; i <= size-1; i++){
             if(strcmp(sv[i].mssv, MSSV) == 0){
                 t = 1;
+                index = i;
                 break;
             }
         }
@@ -125,7 +129,6 @@ void function_4(sinhvien sv, int size){
             printf("Khong co sinh vien nao co ma so sinh vien %d.", MSSV);
         }
         else{
-            printf("Thong tin cua sinh vien co ma so %d.", MSSV); printf("\n");
             showInformation(sv[i]);
         }
     }
