@@ -156,7 +156,7 @@ void MENU(){
     printf("+   2. Xem toan bo sinh vien.             +\n");
     printf("+   3. Xoa sinh vien.                     +\n");
     printf("+   4. Tim sinh vien.                     +\n");
-    printf("+   5. In ten sinh vien.                  +\n");
+    printf("+   5. Danh sach sinh vien theo diem.     +\n");
     printf("+   0. Thoat chuong trinh.                +\n");
     printf("-------------------------------------------\n");
 }
@@ -225,6 +225,19 @@ int main(){
                 printf("+            THOAT CHUONG TRINH           +\n");
                 printf("-------------------------------------------\n");
                 Run = 0;
+                
+                char A[11] = {'_','_','_','_','_','_','_','_','_','_'};
+                int count = 0;
+                for(i = 0; i <= 10000 ;i++){
+                    if(i%1000 == 0) {system("cls");printf("Auto save!\n");
+                        A[count] = '#'; 
+                        count++;
+                        printf("["); for(j = 0; j <= 9; j++) printf("%c", A[j]);
+                        printf("]");
+                    }
+                }
+                printf("\n");
+                printf("SUCCESSFUL");
             }
         }
     }
